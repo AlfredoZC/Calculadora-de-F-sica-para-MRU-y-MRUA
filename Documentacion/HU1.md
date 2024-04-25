@@ -16,7 +16,7 @@ Lista detallada de condiciones que debe cumplir la historia para considerarse co
 1. **Criterio de Aceptación 1**
    - Debe ser de interfaz simple
    - Debe ser intuitiva de usar
-
+   - Debe preguntar al usuario si desea realizar otro calculo
 
 ## Prioridad
 
