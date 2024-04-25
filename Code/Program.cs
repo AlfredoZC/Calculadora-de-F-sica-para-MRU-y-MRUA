@@ -34,8 +34,8 @@ while ( verificator == true){
                 if (decide == 1){
                     
                     Console.WriteLine("Calculemos la distancia!");
-                    Console.WriteLine("Ingrese la velocidad(ojo se calcula en km/h) Solo ingrese el numero...");
-                    int vel = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese la velocidad(ojo se calcula en metros/segundos) Solo ingrese el numero...");
+                    int vel = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
                     Console.WriteLine("Ingrese el tiempo (en minutos) ignore los segundos.");
                     float tiempo = Convert.ToSingle(Console.ReadLine()) / 60;
                     float result = vel * tiempo; 
@@ -59,8 +59,8 @@ while ( verificator == true){
                     Console.WriteLine("Calculemos el tiempo!");
                     Console.WriteLine("Ingrese la distancia (ojo se calcula en metros) Solo ingrese el numero ...");
                     int dis = int.Parse(Console.ReadLine())/1000;
-                    Console.WriteLine("Ingrese la velocidad(ojo se calcula en km/h) Solo ingrese el numero...");
-                    int vel = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese la velocidad(ojo se calcula en metros/segundos) Solo ingrese el numero...");
+                    int vel = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
                     float result = (dis  / (float)vel) * 60 ; 
 
                     Console.WriteLine($"El resultado es {result}minutos");
@@ -104,21 +104,21 @@ while ( verificator == true){
                     Console.WriteLine("Vamos a calcular la posicion final!");
                     Console.WriteLine("Ingrese la posicion inicial // en metros");
                     int x0 = int.Parse(Console.ReadLine())/1000;
-                    Console.WriteLine("ingrese la velocidad inicial( ojo en km/h) solo ingrese el numero");
-                    int v0 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("ingrese la velocidad inicial( ojo en metros/segundos) solo ingrese el numero");
+                    int v0 = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
                     Console.WriteLine("Ingrese el tiempo( ojo en minutos) solo ingrese el numero");
                     int t = int.Parse(Console.ReadLine())/ 60; 
-                    Console.WriteLine("Ingrese la aceleracion (Ojo se trabaja en km/h)solo ingrese el numero");
-                    int a = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese la aceleracion (Ojo se trabaja en metros/segundos)solo ingrese el numero");
+                    int a = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
                     result  = x0 + v0 * t + 0.5 * a * (t*t);
                     Console.WriteLine($" El resultado es: {result}Km");
                      
                 }else if ( decide_2 == 2){
                     Console.WriteLine("Vamos a calcular la velocidad final! ");
-                    Console.WriteLine("Ingres la velocidad inicial ( ojo en km/h) solo ingrese el numero");
-                    int v0 = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Ingrese la aceleracion (Ojo se trabaja en km/h)solo ingrese el numero");
-                    int a = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingres la velocidad inicial ( ojo en metros/segundos) solo ingrese el numero");
+                    int v0 = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
+                    Console.WriteLine("Ingrese la aceleracion (Ojo se trabaja en metros/segundos)solo ingrese el numero");
+                    int a = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
                     Console.WriteLine("Ingrese el tiempo( ojo en minutos) solo ingrese el numero");
                     int t = int.Parse(Console.ReadLine())/ 60;
                     result  = v0 + a * t;
@@ -126,12 +126,12 @@ while ( verificator == true){
 
                 }else if ( decide_2 == 3){
                     Console.WriteLine("Vamos a calcular el tiempo!");
-                    Console.WriteLine("Ingrese la velocidad inicial (ojo en km/h)solo ingrese el numero");
-                    int v0 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese la velocidad inicial (ojo en metros/segundos)solo ingrese el numero");
+                    int v0 = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
                     Console.WriteLine(" Ahora ingrese la velocidad final ( ojo en km/h) Solo ingrese el numero");
                     int v  = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Ingrese la aceleracion (ojo se trabaja en km/h)solo ingrese el numero");
-                    int a = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese la aceleracion (ojo se trabaja en metros/segundos)solo ingrese el numero");
+                    int a = ((int.Parse(Console.ReadLine()) )* 3600 )/ 1000;
                     result = (v - v0)/ a; 
                     Console.WriteLine($"El tiempo es:{result}hrs");
 
