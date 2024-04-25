@@ -30,7 +30,7 @@ De alta prioridad
 
 ## Estimación
 
-2 personas/semana
+2 personas/dia
 
 ## Notas/Tareas Adicionales
 
