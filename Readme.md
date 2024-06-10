@@ -6,135 +6,88 @@
 
 
 <p align="center">
-  <b>Automatically generate a beautiful best-practice README file based on the contents of your repository</b></br>
-  <sub>Use this readme generator to easily generate beautiful readme's like this one! Simply extend your <code>package.json</code> and create a readme blueprint. On Github, the README file is like the landing page of your website because it is the first thing visitors see. You want to make a good first impression.<sub>
+  <b>MODELO DE BASE DE DATOS SIMPLE </b></br>
+  <sub>En este pequeño proyecto nos piden el desarrollo de una base de datos simple, donde el usuario tiene acceso a una limitada cantidad de funciones. Se busca almacenar datos exitosamente y hacer uso de ellos a traves de comandos. Pero antes de ir al programa, debemos ver que es una base de datos  <sub>
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#installation)
 
-## ➤ Installation
+## ➤  Base de Datos
 
-```javascript
-npm install @appnest/readme -D
-```
+Que es una base de datos? 
 
-If you don't want to install anything you can use the `npx @appnest/readme generate` command instead.
+En resumen es un conjunto de informacion almacenada y consultada (Sistematicamente). La Base de Datos nos garantiza seguridad de almacenamiento de datos. Incluso puede ayudarnos a ser mas escalables y eficientes.  
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#getting-started-quick)
 
-## ➤ Getting Started (quick)
+## ➤ Tipos de Base de datos 
 
-This getting started guide is super quick! Follow these two steps and you will have turned your boring readme into a pretty one.
+## Base de datos SQL
 
-1. Rename your current `README.md` file to `blueprint.md`.
-2. Run `npx @appnest/readme generate`
-
-That's it! Check out your freshly generated `README.md` file and enjoy the fruits of what you just did.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#getting-started-slower)
-
-## ➤ Getting Started (slower)
-
-```
-
-### Usage
-
-Run the `node_modules/.bin/readme generate` command and a README file will be generated for you. If you want to go into depth with the readme command, check out the following options or write `node_modules/.bin/readme generate -h` in your terminal if that's your cup of tea.
-
-
-| Option                | Type                                             | Description                                      |
-|-----------------------|--------------------------------------------------|--------------------------------------------------|
-| -c, --config          | string                                           | Path of the configuration file. Defaults to 'blueprint.json |
-| -p, --package         | string                                           | Path of the 'package.json' file. Defaults to 'package.json'. |
-| --pkg.name            | string                                           | Name of the project. Used for the 'title' template. |
-| --pkg.contributors    | {name: string; email: string; url: string; img: string; info: string[];}[] | Contributors of the project. Used for the 'contributors' template. |
-| --pkg.license         | string                                           | License kind. Used for the 'license' template.   |
-| -o, --output          | string                                           | Path of the generated README file. Defaults to 'README.md'. |
-| -h, --help            |                                                  | Display this help message.                       |
-| -i, --input           | string                                           | The blueprint. Defaults to 'blueprint.md'.       |
-| --badges              | {alt: string, url: string, img: string}[]        | Badges. Used for the 'badges' template.          |
-| --text                | string                                           | Text describing your project. Used for the 'description' template. |
-| --demo                | string                                           | Demo url for your project. Used for the 'description' template. |
-| --lineBreak           | string                                           | The linebreak used in the generation of the README file. Defaults to 'rn' |
-| --tab                 | string                                           | The tab used in the generation of the README file. Defaults to 't' |
-| --placeholder         | [string, string]                                 | The placeholder syntax used when looking for templates in the blueprint. Defaults to '["{{", "}}"]. |
-| --line                | string                                           | The line style of the titles. Can also be an URL. Defaults to 'colored'. |
-| --templates           | {name: string, template: string}[]               | User created templates.                          |
-| -s, --silent          | boolean                                          | Whether the console output from the command should be silent. |
-| -d, --dry             | boolean                                          | Whether the command should run as dry. If dry, the output file is notgenerated but outputted to the console instead. |
-| --headingPrefix       | {[key: number]: string}                          | The prefix of the header tags. Defaults to '{1: "➤ ", 2: "➤ "}' |
-| --logo                | {src: string; alt?: string; width?: number; height?: number;} | The logo information. Used for the 'logo' template. |
-| --contributorsPerRow  | number                                           | The amount of contributors pr row when using the 'contributors' template. Defaults to '6' |
-| --documentationConfig | object                                           | Configuration object for automatic documentation template. |
-| --extend              | string                                           | Path to another configuration object that should be extended. |
-| --checkLinks          | boolean                                          | Checks all links for aliveness after the README file has been generated. |
-
-
-### Configuration
-
-To configure this library you'll need to create a `blueprint.json` file. This file is the configuration for the templates we are going to take a look at in the next section. If you want to interpolate values from the configuration file into your README file you can simply reference them without a scope. Eg. if you have the field "link" in your `blueprint.json` you can write `{{ link }}` to reference it.
-
-Great. Now that we have the basics covered, let's continue and see how you can use templates!
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#templates)
-
-## ➤ Templates
-
-If you have come this far you are probably interested to figure out how to use README templates. This library comes with a set of pre-defined templates to make your readme awesome, but you can of course create your own. More about that later, let's not get ahead of our self just yet.
-
-### Title
-
-Let's start with the title template. To generate the title you write `{{ template:title }}` in your blueprint. When you run the `readme` command the template will generate the following:
-
-<h1 align="center">@appnest/readme</h1>
-
-The important thing to note here is that the template automatically reads your `package.json` file and inserts the `name` from the package.
-
-```json
-{
-  "name": "@appnest/readme"
-}
-```
-
-That's cool. Let's go through some of the other built-in templates you might want to add.
-
-### Logo
-
-The logo template adds a logo to your readme and looks like this:
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/logo-shadow.png" alt="Logo" width="150" height="150" />
-</p>
-
-
-Then you can stamp your custom template using the `{{ template:install }}` syntax ("install" here referencing the name of the custom template). The below is an example of what is stamped to the README file using the above template.
-
-Run `npm install @appnest/readme' to install this library!
-
-Be creative! You can for example add a template for code-snippets or [words you keep spelling wrong](https://en.oxforddictionaries.com/spelling/common-misspellings).
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#advanced)
-
-
-
-
-| Attribute  | Type              | Description                          |
-|------------|-------------------|--------------------------------------|
-| **size**   | 'medium', 'large' | Determines the size                  |
-| **active** | boolean           | Whether the element is active or not |
-|Ingles | bolean                | wdwd
+* **Base de datos relacionable:** Es mas estructurado, le da prioridad a la integridad de los datos. Sin embargo es mucho mas lenta a gran escala. Esta puede ser operada con SQL.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)
 
+## Base de datos NoSQL
+
+* **Base de datos no relacionable o NOSQL:** Es mucho menos estructurado, estructura los datos a gran escala. Esto en consecuencia nos brinda mas velocidad al momento de acceder a los datos. 
+
+* **Base de datos de objetos:** Que almacena datos como objetos. Diseñada para trabajar con lenguajes de programacion orientada a objetos como java y python. 
+
+
+* **Base de datos de grafos:** Diseñada para trabajar con datos relacionables complejos, como las relaciones sociales o las redes de transporte. Utilizan modelos de datos basados en nodos y relaciones.
+
+* **Base de datos en memoria:** Almacena datos directamente en la memoria y permite ofrecer un rendimiento excepcionalment rapido para las aplicacciones que requieren de acceso instantaneo a los datos.
+
+
+SQL puede ser tedioso pero a su vez bastante robusto con el tema de datos, brindando una mayor integridad e importancia a este. Si embargo como lo mencionamos es lento y esto puede causar muchas complicaciones. Pero, gracias a este problema con la velocidad en los datos tenemos NoSQL que nos brinda mayor velocidad de datos y es mas flexible en cuanto al almacenamiento de los mismos.  
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#getting-started-slower)
+
+## ➤ Funcionamiento de la base de datos
+
+
+En esta BD el usuario puede ingresar fechas a la consola 1-2-3 seguidas de un evento, ejemplo ¨Visitar a mamá¨. El formato de entrada es el siguiente:    
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#advanced)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)
+
+
+
+
+| Comando  | Formato             | Descripcion                           |
+|------------|-------------------|--------------------------------------|
+| **Add**   |Add fecha evento | Este nos permite agregar un evento en una fecha especifica. Requiere del comando la fecha y el evento a añadir.
+| **Print** | Print       | Este comando nos imprime todas las fechas y sus eventos. Este solo require del comando Print. |
+|**Del**| Del fecha evento            | Este comando nos permite eliminar un evento especifico dentro de una fecha determinada, si la fecha no existe, la consola mostrara "event not found". Este requiere el comando, la fecha y el evento a eliminar.  |
+|**Del**| Del fecha                | Este comando a diferencia del otro, no tiene evento como entrada es decir (vacio). Por lo que elimina todos los elementos de la fecha dada. Este requiere el comando y la fecha.  |
+|**Find**| Find fecha               |Este comando nos permite acceder a una fecha en especifico y mostrar los eventos en tal fecha. Este comando solo requiere de los datos comando find y la fecha. |
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)
+
+Ejemplo : Add 1-2-3 event1
+
+
+Pero como debemos ingresar la fecha?. Bueno la fecha esta en formato años, meses, dias (1-2-3) Donde 1 es el año 2 es el mes y 3 el dia. Sin embargo nuestro programa tiene que almacenar la fecha de la siguiente manera 0001-02-03 y chequear si los meses no exceden del rango de 1 a 12, de la misma forma con los dias, estos no pueden exceder de 31. Tambien pueden haber años negativos como -1-2-3 y estos tienen que ser almacenados de la siguiente manera (-1-02-03).
+  
+Finalmente el evento puede ser ingresado a gusto!. Con estas instrucciones puede hacer uso de nuestra Base de Datos.
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
+## ➤ DIAGRAMA DE FLUJO DEL PROGRAMA
+
+![database](Diagrama%20de%20flujo%20.drawio.png)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
 
 ## ➤ Contributors
 	
 
-| [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
+| <img alt="Jose Alfredo" src="foto.png " width="100">| [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
 |:--------------------------------------------------:|:--------------------------------------------------:|
-| [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
+| Jose Alfredo (https://github.com/AlfredoZC) | [Yo](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
 | 🔥                                               |                                                  |
 
 
